@@ -51,12 +51,12 @@ namespace BTL.Forms.Main
             this.iconCurrentForm = new FontAwesome.Sharp.IconPictureBox();
             this.panelShadow = new System.Windows.Forms.Panel();
             this.panelView = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnHome)).BeginInit();
@@ -344,7 +344,7 @@ namespace BTL.Forms.Main
             // 
             // panelTitleBar
             // 
-            this.panelTitleBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelTitleBar.BackColor = System.Drawing.Color.Transparent;
             this.panelTitleBar.Controls.Add(this.avt);
             this.panelTitleBar.Controls.Add(this.btnThuNho);
             this.panelTitleBar.Controls.Add(this.btnPhongTo);
@@ -371,7 +371,7 @@ namespace BTL.Forms.Main
             this.avt.IconColor = System.Drawing.Color.White;
             this.avt.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.avt.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.avt.Location = new System.Drawing.Point(904, 28);
+            this.avt.Location = new System.Drawing.Point(903, 30);
             this.avt.Name = "avt";
             this.avt.Size = new System.Drawing.Size(164, 43);
             this.avt.TabIndex = 5;
@@ -442,11 +442,11 @@ namespace BTL.Forms.Main
             // labelCurrentForm
             // 
             this.labelCurrentForm.AutoSize = true;
-            this.labelCurrentForm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelCurrentForm.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelCurrentForm.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.labelCurrentForm.Location = new System.Drawing.Point(46, 43);
+            this.labelCurrentForm.Location = new System.Drawing.Point(46, 45);
             this.labelCurrentForm.Name = "labelCurrentForm";
-            this.labelCurrentForm.Size = new System.Drawing.Size(56, 21);
+            this.labelCurrentForm.Size = new System.Drawing.Size(51, 20);
             this.labelCurrentForm.TabIndex = 1;
             this.labelCurrentForm.Text = "Home";
             // 
@@ -457,10 +457,10 @@ namespace BTL.Forms.Main
             this.iconCurrentForm.IconChar = FontAwesome.Sharp.IconChar.Home;
             this.iconCurrentForm.IconColor = System.Drawing.Color.MidnightBlue;
             this.iconCurrentForm.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconCurrentForm.IconSize = 37;
-            this.iconCurrentForm.Location = new System.Drawing.Point(6, 35);
+            this.iconCurrentForm.IconSize = 35;
+            this.iconCurrentForm.Location = new System.Drawing.Point(14, 37);
             this.iconCurrentForm.Name = "iconCurrentForm";
-            this.iconCurrentForm.Size = new System.Drawing.Size(37, 37);
+            this.iconCurrentForm.Size = new System.Drawing.Size(35, 35);
             this.iconCurrentForm.TabIndex = 0;
             this.iconCurrentForm.TabStop = false;
             // 
@@ -476,14 +476,27 @@ namespace BTL.Forms.Main
             // panelView
             // 
             this.panelView.BackColor = System.Drawing.SystemColors.Control;
-            this.panelView.Controls.Add(this.panel1);
             this.panelView.Controls.Add(this.label5);
+            this.panelView.Controls.Add(this.panel1);
             this.panelView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelView.Location = new System.Drawing.Point(220, 79);
             this.panelView.Name = "panelView";
             this.panelView.Size = new System.Drawing.Size(1071, 651);
             this.panelView.TabIndex = 4;
             this.panelView.Paint += new System.Windows.Forms.PaintEventHandler(this.panelView_Paint);
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.SystemColors.Control;
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.label5.Location = new System.Drawing.Point(468, 618);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(156, 15);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Bản quyền thuộc về nhóm 6";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel1
             // 
@@ -521,6 +534,7 @@ namespace BTL.Forms.Main
             // 
             // label2
             // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -540,18 +554,6 @@ namespace BTL.Forms.Main
             this.label3.Size = new System.Drawing.Size(331, 54);
             this.label3.TabIndex = 3;
             this.label3.Text = "Trần Chiến Công";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.Control;
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label5.Location = new System.Drawing.Point(464, 1009);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(156, 15);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Bản quyền thuộc về nhóm 6";
             // 
             // MainForm
             // 

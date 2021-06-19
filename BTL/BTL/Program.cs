@@ -1,3 +1,4 @@
+using BTL.Forms.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace BTL
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
            // Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
+            Application.Run(new MainForm());
         }
     }
 }
