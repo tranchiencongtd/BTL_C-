@@ -1,4 +1,5 @@
 ﻿using BTL.Forms.Main;
+using BTL.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,16 @@ namespace BTL.Forms.Login
 {
     public partial class Loading : Form
     {
+        public TaiKhoan user;
         public Loading()
         {
             InitializeComponent();
+        }
+
+        public Loading(TaiKhoan x)
+        {
+            InitializeComponent();
+            user = x;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -25,7 +33,7 @@ namespace BTL.Forms.Login
             if (progressBar1.Value == 500)
             {
                 timer1.Enabled = false;
-                MainForm main = new MainForm();
+                MainForm main = new MainForm(user);
                 this.Close();
                 main.Show();
                 

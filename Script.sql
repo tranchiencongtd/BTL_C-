@@ -1,6 +1,6 @@
 /*
 Created		6/16/2021
-Modified		6/17/2021
+Modified		6/19/2021
 Project		
 Model			
 Company		
@@ -9,13 +9,23 @@ Version
 Database		MS SQL 2005 
 */
 
+use master
+go
+
+create database QLBanNuocHoa
+go
+
+use QLBanNuocHoa
+go
+
 
 Create table [CuaHang]
 (
-	[MaCuaHang] Varchar(20) NOT NULL,
+	[MaCuaHang] Nvarchar(20) NOT NULL,
 	[TenCuaHang] Nvarchar(100) NOT NULL,
 	[DiaChi] Nvarchar(100) NOT NULL,
-	[DienThoai] Varchar(11) NOT NULL,
+	[DienThoai] Nvarchar(11) NOT NULL,
+	[SoTaiKhoan] Nvarchar(100) NULL,
 Primary Key ([MaCuaHang])
 ) 
 go
@@ -24,8 +34,8 @@ Create table [HoaDon]
 (
 	[MaHD] Integer Identity NOT NULL,
 	[NgayLap] Datetime NOT NULL,
-	[SDT] Varchar(11) NOT NULL,
-	[MaNV] Varchar(20) NOT NULL,
+	[SDT] Nvarchar(11) NOT NULL,
+	[MaNV] Nvarchar(20) NOT NULL,
 Primary Key ([MaHD])
 ) 
 go
@@ -33,7 +43,7 @@ go
 Create table [KhachHang]
 (
 	[TenKH] Nvarchar(100) NULL,
-	[SDT] Varchar(11) NOT NULL,
+	[SDT] Nvarchar(11) NOT NULL,
 	[TichDiem] Integer NULL,
 Primary Key ([SDT])
 ) 
@@ -45,9 +55,10 @@ Create table [SanPham]
 	[TenSP] Nvarchar(100) NOT NULL,
 	[SLTon] Integer NOT NULL,
 	[DonGia] Money NOT NULL,
-	[XuatXu] Varchar(100) NOT NULL,
-	[ThuongHieu] Varchar(100) NOT NULL,
-	[MaDM] Varchar(50) NOT NULL,
+	[XuatXu] Nvarchar(100) NOT NULL,
+	[ThuongHieu] Nvarchar(100) NOT NULL,
+	[MaDM] Nvarchar(50) NOT NULL,
+	[DonViTinh] Nvarchar(50) NOT NULL,
 Primary Key ([MaSP])
 ) 
 go
@@ -82,56 +93,72 @@ go
 
 Create table [NhanVien]
 (
-	[MaNV] Varchar(20) NOT NULL,
+	[MaNV] Nvarchar(20) NOT NULL,
 	[TenNV] Nvarchar(100) NOT NULL,
-	[Anh] Varchar(200) NULL,
+	[Anh] Nvarchar(200) NULL,
 	[GioiTinh] Bit NULL,
-	[SDT] Varchar(11) NULL,
-	[MaCuaHang] Varchar(20) NOT NULL,
+	[SDT] Nvarchar(11) NULL,
+	[MaCuaHang] Nvarchar(20) NOT NULL,
 Primary Key ([MaNV])
 ) 
 go
 
 Create table [NhaCC]
 (
-	[MaNCC] Varchar(20) NOT NULL,
-	[TenNCC] Nvarchar(100) NULL,
-	[DienThoai] Varchar(11) NULL,
-	[DiaChi] Nvarchar(100) NULL,
-	[Email] Varchar(50) NULL,
+	[MaNCC] Nvarchar(20) NOT NULL,
+	[TenNCC] Nvarchar(100) NOT NULL,
+	[DienThoai] Nvarchar(11) NOT NULL,
+	[DiaChi] Nvarchar(100) NOT NULL,
+	[Fax] Nvarchar(100) NOT NULL,
+	[SoTaiKhoan] Nvarchar(100) NOT NULL,
 Primary Key ([MaNCC])
 ) 
 go
 
 Create table [DanhMuc]
 (
-	[MaDM] Varchar(50) NOT NULL,
+	[MaDM] Nvarchar(50) NOT NULL,
 	[TenDM] Nvarchar(100) NOT NULL,
 Primary Key ([MaDM])
 ) 
 go
 
-Create table [DongPhieuNhap]
+Create table [TaiKhoan]
 (
-	[MaNCC] Varchar(20) NOT NULL,
-	[MaSP] Integer NOT NULL,
-	[SoLuongNhap] Integer NULL,
-Primary Key ([MaNCC],[MaSP])
+	[TenTK] Nvarchar(30) NOT NULL,
+	[MatKhau] Nvarchar(30) NOT NULL,
+	[ChucVu] Bit NOT NULL,
+	[MaNV] Nvarchar(20) NOT NULL,
+Primary Key ([TenTK])
 ) 
 go
 
-Create table [TaiKhoan]
+Create table [PhieuNhap]
 (
-	[TenTK] Varchar(30) NOT NULL,
-	[MatKhau] Varchar(30) NOT NULL,
-	[ChucVu] Bit NOT NULL,
-	[MaNV] Varchar(20) NOT NULL,
-Primary Key ([TenTK])
+	[MaPhieuNhap] Integer Identity NOT NULL,
+	[MaCuaHang] Nvarchar(20) NOT NULL,
+	[MaNCC] Nvarchar(20) NOT NULL,
+	[NgayNhap] Datetime NOT NULL,
+	[ThanhToan] Nvarchar(50) NULL,
+	[NguoiNhap] Nvarchar(20) NOT NULL,
+Primary Key ([MaPhieuNhap])
+) 
+go
+
+Create table [DongPhieuNhap]
+(
+	[MaPhieuNhap] Integer NOT NULL,
+	[MaSP] Integer NOT NULL,
+	[SoLuong] Integer NULL,
+	[GiaNhap] Money NULL,
+Primary Key ([MaPhieuNhap],[MaSP])
 ) 
 go
 
 
 Alter table [NhanVien] add  foreign key([MaCuaHang]) references [CuaHang] ([MaCuaHang])  on update no action on delete no action 
+go
+Alter table [PhieuNhap] add  foreign key([MaCuaHang]) references [CuaHang] ([MaCuaHang])  on update no action on delete no action 
 go
 Alter table [ThongTinHD] add  foreign key([MaHD]) references [HoaDon] ([MaHD])  on update no action on delete no action 
 go
@@ -149,9 +176,11 @@ Alter table [HoaDon] add  foreign key([MaNV]) references [NhanVien] ([MaNV])  on
 go
 Alter table [TaiKhoan] add  foreign key([MaNV]) references [NhanVien] ([MaNV])  on update no action on delete no action 
 go
-Alter table [DongPhieuNhap] add  foreign key([MaNCC]) references [NhaCC] ([MaNCC])  on update no action on delete no action 
+Alter table [PhieuNhap] add  foreign key([MaNCC]) references [NhaCC] ([MaNCC])  on update no action on delete no action 
 go
 Alter table [SanPham] add  foreign key([MaDM]) references [DanhMuc] ([MaDM])  on update no action on delete no action 
+go
+Alter table [DongPhieuNhap] add  foreign key([MaPhieuNhap]) references [PhieuNhap] ([MaPhieuNhap])  on update no action on delete no action 
 go
 
 

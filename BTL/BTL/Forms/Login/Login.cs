@@ -1,5 +1,6 @@
 ﻿using BTL.Forms.Login;
 using BTL.Forms.Main;
+using BTL.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace BTL
     public partial class Login : Form
     {
 
+        QLBanNuocHoaContext db = new QLBanNuocHoaContext();
         public Login()
         {
             InitializeComponent();
@@ -42,11 +44,48 @@ namespace BTL
             }
         }
 
+        private void dangNhap()
+        {
+            string taikhoan = txtTaiKhoan.Text.Trim();
+            string matkhau = txtMatKhau.Text.Trim();
+
+            // Lay tai khoan tu db
+            TaiKhoan user;
+            user = db.TaiKhoans
+                .Where(p => p.TenTk == taikhoan)
+                .Select(p => p).FirstOrDefault();
+
+            // Check xem ton tai tk mk do hay khong
+            if (user == null)
+            {
+                MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác");
+            }
+            else
+            {
+                if (user.MatKhau != matkhau)
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                Loading load = new Loading(user);
+                this.Hide();
+                load.ShowDialog();
+            }
+        }
+
+        // Enter de dang nhap
+        private void Login_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dangNhap();
+            }
+        }
+
+        // Click dang nhap
         private void button1_Click(object sender, EventArgs e)
         {
-            Loading load = new Loading();
-            this.Hide();
-            load.ShowDialog();
+            dangNhap();
         }
 
         // Keo tha duoc form
@@ -54,6 +93,19 @@ namespace BTL
         public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
         [System.Runtime.InteropServices.DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
+
+        private void Login_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        // Truoc khi load form
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
         private void button1_MouseMove(object sender, MouseEventArgs e)
         {
             
@@ -64,16 +116,12 @@ namespace BTL
             
         }
 
-        private void Login_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
 
         private void Login_MouseUp(object sender, MouseEventArgs e)
         {
             
         }
 
+      
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,21 +9,90 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Forms.Main.Views;
+using BTL.Models;
 using FontAwesome.Sharp;
 
 namespace BTL.Forms.Main
 {
     public partial class MainForm : Form
     {
+        // Db, TaiKhoan
+        public TaiKhoan user;
+        QLBanNuocHoaContext db = new QLBanNuocHoaContext();
+
         // Cac truong
         private IconButton currentBtn;
         private Panel leftBorderBtn;
         private Form currentViewForm;
 
+        ArrayList listHomeCauNoi = new ArrayList()
+                {
+                    "Tin rằng bạn có thể làm một điều gì đó đồng nghĩa với việc bạn đã đi được nửa đường đến đó",
+                    "Đừng so sánh mình với bất cứ ai trong thế giới này. Nếu bạn làm như vậy có nghĩa bạn đang sỉ nhục chính bản thân mình.",
+                    "Không có hoàn cảnh nào tuyệt vọng, chỉ có người tuyệt vọng vì hoàn cảnh.",
+                    "Bắt đầu từ nơi bạn đứng. Sử dụng những gì bạn có. Làm những gì bạn có thể.",
+                    "Cuộc sống chỉ mang lại cho chúng ta 10% cơ hội, 90% còn lại là do chúng ta trải nghiệm thế nào với nó.",
+                    "Nơi lạnh nhất không phải là Bắc cực mà là nơi không có tình người.",
+                    "Chúng ta không nên bỏ cuộc, chúng ta không nên đề những khó khăn đánh bại mình.",
+                    "Đừng ngại thay đổi. Bạn có thể mất một cái gì đó tốt nhưng bạn có thể đạt được một cái gì đó còn tốt hơn.",
+                    "Chúng ta phải lựa chọn: nỗi đau của sự kỷ luật hay nỗi đau của sự hối hận.",
+                    "Nếu nghĩ tới ước mơ không đủ làm bạn sợ hãi, nó quá nhỏ đối với bạn.",
+                    "Bạn không bao giờ là kẻ thua cuộc cho đến khi bạn bỏ cuộc.",
+                    "Hãy xây nên giấc mơ của bạn, nếu không thì người khác sẽ thuê bạn xây giấc mơ của họ.",
+                    "Thà làm một bông hoa sen nở khi thấy mặt trời bị mất hết nhụy còn hơn giữ nguyên hình nụ búp trong sương lạnh vĩnh cửu của mùa đông.",
+                    "Giấc mơ không phải là thứ bạn nhìn thấy khi ngủ, giấc mơ là những điều mà không cho phép bạn ngủ",
+                    "Cuộc đời ngắn ngủi, hãy sống trọn từng phút giây. Tình yêu khan hiếm, hãy biết nắm lấy. Giận dữ là không tốt, hãy loại bỏ nó. Những kỉ niệm luôn ngọt ngào, hãy trân trọng chúng.",
+                    "Mẹ cha cho bạc cho vàng không bằng lấy được một chàng Bắc Giang",
+                    "Nếu như bạn bị rớt lại phía sau, hãy chạy nhanh hơn. Không bao giờ bỏ cuộc, không bao giờ đầu hàng, hãy chống lại nghịch cảnh.",
+                    "Cuộc sống luôn có nhiều việc xảy ra không như ý, chúng ta không thể né tránh, điều duy nhất bạn có thể làm là thay đổi góc nhìn về nó.",
+                    "Vinh quang không phải là không bao giờ thất bại, mà là cách chúng ta đứng dậy sau mỗi lần gục ngã.",
+                    "Hãy dừng để ý tới những khó khăn của bạn mà hãy biết ơn những gì bạn có."
+                };
+
         // Khoi tao
         public MainForm()
         {
             InitializeComponent();
+        }
+
+        public MainForm(TaiKhoan x)
+        {
+
+            // tài khoản đã đăng nhập
+            //NhanVien nv = getInfoUser();
+            user = x;
+
+            // Bắt đầu khởi tạo
+            InitializeComponent();
+
+            //leftBorderBtn = new Panel();
+           // leftBorderBtn.Size = new Size(7, 60);
+           // panelMenu.Controls.Add(leftBorderBtn);
+            // Tat control text string
+           // this.Text = string.Empty;
+            //this.ControlBox = false;
+           // this.DoubleBuffered = true;
+           // this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            // Thoi gian
+           // labelTimeHhMm.Text = "";
+           // labelTimeSs.Text = "";
+           // labelHiTen.Text = nv.TenNv;
+
+            //Lay mot cau quote bat ky trong list
+           // Random random = new Random();
+           // int so = random.Next(listHomeCauNoi.Count);
+           // textBox1.Text = listHomeCauNoi[so].ToString();
+
+
+            // Gan avt va ten cua user
+           // avt.Text = nv.TenNv;
+        }
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+            NhanVien nv = getInfoUser();
+
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
             panelMenu.Controls.Add(leftBorderBtn);
@@ -31,12 +101,39 @@ namespace BTL.Forms.Main
             this.ControlBox = false;
             this.DoubleBuffered = true;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            // Thoi gian
+            //timeClock.Enabled = true;
+            labelTimeHhMm.Text = "";
+            labelTimeSs.Text = "";
+            labelHiTen.Text = nv.TenNv;
+
+            //Lay mot cau quote bat ky trong list
+            Random random = new Random();
+            int so = random.Next(listHomeCauNoi.Count);
+            textBox1.Text = listHomeCauNoi[so].ToString();
+
+
+            // Gan avt va ten cua user
+            avt.Text = nv.TenNv;
         }
-        // 
+
+        // Lấy thong tin ve user
+        private NhanVien getInfoUser()
+        {
+            string manv = user.MaNv;
+            var nv = db.NhanViens
+                        .Where(p => p.MaNv == manv)
+                        .Select(p => p).FirstOrDefault();
+            return nv;
+        }
+
+        
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(255, 255, 255); // Trang
         }
+
         //Methods
         private void ActivateButton(object senderBtn, Color color)
         {
@@ -79,8 +176,13 @@ namespace BTL.Forms.Main
             }
         }
 
+
+        // Mo form moi trong panelView
         private void OpenChildForm(Form childForm)
         {
+            // Bat form moi thi an drop menu di
+            panelDropMenu.Visible = false;
+
             // Neu co form mo dong form do va mo form moi
             if (currentViewForm != null)
             {
@@ -103,6 +205,7 @@ namespace BTL.Forms.Main
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new ThongKe());
+
         }
 
 
@@ -162,12 +265,12 @@ namespace BTL.Forms.Main
 
         private void btnHome_Click_1(object sender, EventArgs e)
         {
-            currentViewForm.Close();
+            if(currentViewForm!=null) currentViewForm.Close();
             Reset();
+            panelDropMenu.Visible = false;
+
         }
-
         // End button event click
-
 
         // Reset
         private void Reset()
@@ -196,27 +299,6 @@ namespace BTL.Forms.Main
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelView_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         // Control form
         private void btnDong_Click(object sender, EventArgs e)
         {
@@ -238,7 +320,6 @@ namespace BTL.Forms.Main
         {
             WindowState = FormWindowState.Minimized;
         }
-
 
         // Hover button 
         private void btnDong_MouseHover(object sender, EventArgs e)
@@ -278,6 +359,47 @@ namespace BTL.Forms.Main
             btnThuNho.ForeColor = Color.Gray;
         }
 
+        // Drop menu
+        private void avt_Click(object sender, EventArgs e)
+        {
+            if(panelDropMenu.Visible)
+            {
+                panelDropMenu.Visible = false;
 
+            } else
+            {
+                panelView.Controls.Add(panelDropMenu);
+                panelDropMenu.BringToFront();
+                panelDropMenu.Visible = true;
+            }
+        }
+
+
+        // Thoi gian thuc o trang chu
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            labelTimeHhMm.Text = DateTime.Now.ToString("HH:mm");
+            labelTimeSs.Text = DateTime.Now.ToString("ss");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelView_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
