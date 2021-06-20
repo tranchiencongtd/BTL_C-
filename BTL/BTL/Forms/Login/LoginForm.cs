@@ -38,11 +38,13 @@ namespace BTL
             {
                 checkBoxHienThiMatKhau.Text = "Ẩn mật khẩu";
                 txtMatKhau.PasswordChar = '\0';
+                //txtMatKhau.UseSystemPasswordChar = true;
             }
             else
             {
                 checkBoxHienThiMatKhau.Text = "Hiển thị mật khẩu";
-                txtMatKhau.PasswordChar = '*';
+                txtMatKhau.PasswordChar = '•';
+                // txtMatKhau.UseSystemPasswordChar = false;
             }
         }
 

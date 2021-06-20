@@ -67,5 +67,23 @@ namespace BTL.Forms.User
             txtMatKhauMoi.Clear();
             txtNhapLaiMK.Clear();
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHienThiMatKhau.Checked == true)
+            {
+                checkBoxHienThiMatKhau.Text = "Ẩn mật khẩu";
+                txtMatKhauCu.PasswordChar = '\0';
+                txtMatKhauMoi.PasswordChar = '\0';
+                txtNhapLaiMK.PasswordChar = '\0';
+            }
+            else
+            {
+                checkBoxHienThiMatKhau.Text = "Hiển thị mật khẩu";
+                txtMatKhauCu.PasswordChar = '•';
+                txtMatKhauMoi.PasswordChar = '•';
+                txtNhapLaiMK.PasswordChar = '•';
+            }
+        }
     }
 }

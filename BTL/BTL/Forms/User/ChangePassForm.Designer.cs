@@ -42,6 +42,7 @@ namespace BTL.Forms.User
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnHuy = new FontAwesome.Sharp.IconButton();
+            this.checkBoxHienThiMatKhau = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // label1
@@ -96,7 +97,7 @@ namespace BTL.Forms.User
             this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.btnXacNhan.IconSize = 30;
             this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.Location = new System.Drawing.Point(164, 308);
+            this.btnXacNhan.Location = new System.Drawing.Point(166, 339);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(99, 36);
             this.btnXacNhan.TabIndex = 4;
@@ -113,6 +114,7 @@ namespace BTL.Forms.User
             this.txtMatKhauCu.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtMatKhauCu.Location = new System.Drawing.Point(86, 126);
             this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.PasswordChar = '•';
             this.txtMatKhauCu.Size = new System.Drawing.Size(259, 23);
             this.txtMatKhauCu.TabIndex = 5;
             // 
@@ -123,6 +125,7 @@ namespace BTL.Forms.User
             this.txtMatKhauMoi.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtMatKhauMoi.Location = new System.Drawing.Point(86, 194);
             this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.PasswordChar = '•';
             this.txtMatKhauMoi.Size = new System.Drawing.Size(259, 23);
             this.txtMatKhauMoi.TabIndex = 6;
             // 
@@ -133,6 +136,7 @@ namespace BTL.Forms.User
             this.txtNhapLaiMK.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtNhapLaiMK.Location = new System.Drawing.Point(86, 258);
             this.txtNhapLaiMK.Name = "txtNhapLaiMK";
+            this.txtNhapLaiMK.PasswordChar = '•';
             this.txtNhapLaiMK.Size = new System.Drawing.Size(259, 23);
             this.txtNhapLaiMK.TabIndex = 7;
             // 
@@ -199,11 +203,27 @@ namespace BTL.Forms.User
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
+            // checkBoxHienThiMatKhau
+            // 
+            this.checkBoxHienThiMatKhau.AutoSize = true;
+            this.checkBoxHienThiMatKhau.FlatAppearance.BorderSize = 0;
+            this.checkBoxHienThiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxHienThiMatKhau.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.checkBoxHienThiMatKhau.ForeColor = System.Drawing.Color.DimGray;
+            this.checkBoxHienThiMatKhau.Location = new System.Drawing.Point(89, 290);
+            this.checkBoxHienThiMatKhau.Name = "checkBoxHienThiMatKhau";
+            this.checkBoxHienThiMatKhau.Size = new System.Drawing.Size(115, 17);
+            this.checkBoxHienThiMatKhau.TabIndex = 13;
+            this.checkBoxHienThiMatKhau.Text = "Hiển thị mật khẩu";
+            this.checkBoxHienThiMatKhau.UseVisualStyleBackColor = true;
+            this.checkBoxHienThiMatKhau.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // ChangePassForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(721, 400);
+            this.Controls.Add(this.checkBoxHienThiMatKhau);
             this.Controls.Add(this.btnHuy);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -240,5 +260,6 @@ namespace BTL.Forms.User
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnHuy;
+        private System.Windows.Forms.CheckBox checkBoxHienThiMatKhau;
     }
 }

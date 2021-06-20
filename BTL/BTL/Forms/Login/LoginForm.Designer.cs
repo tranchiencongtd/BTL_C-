@@ -68,6 +68,7 @@ namespace BTL
             this.checkBoxHienThiMatKhau.AutoSize = true;
             this.checkBoxHienThiMatKhau.FlatAppearance.BorderSize = 0;
             this.checkBoxHienThiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxHienThiMatKhau.ForeColor = System.Drawing.Color.DimGray;
             this.checkBoxHienThiMatKhau.Location = new System.Drawing.Point(52, 299);
             this.checkBoxHienThiMatKhau.Name = "checkBoxHienThiMatKhau";
             this.checkBoxHienThiMatKhau.Size = new System.Drawing.Size(118, 19);
@@ -121,10 +122,9 @@ namespace BTL
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtMatKhau.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtMatKhau.Location = new System.Drawing.Point(86, 249);
-            this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
-            this.txtMatKhau.PasswordChar = '*';
-            this.txtMatKhau.Size = new System.Drawing.Size(265, 31);
+            this.txtMatKhau.PasswordChar = '•';
+            this.txtMatKhau.Size = new System.Drawing.Size(265, 25);
             this.txtMatKhau.TabIndex = 5;
             // 
             // txtTaiKhoan
@@ -133,9 +133,8 @@ namespace BTL
             this.txtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtTaiKhoan.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtTaiKhoan.Location = new System.Drawing.Point(86, 175);
-            this.txtTaiKhoan.Multiline = true;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(265, 32);
+            this.txtTaiKhoan.Size = new System.Drawing.Size(265, 25);
             this.txtTaiKhoan.TabIndex = 4;
             // 
             // panel3
