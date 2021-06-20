@@ -19,7 +19,6 @@ namespace BTL.Forms.Main
     public partial class MainForm : Form
     {
         // Db, TaiKhoan
-        NhanVien nv;
         public TaiKhoan user;
         QLBanNuocHoaContext db = new QLBanNuocHoaContext();
 
@@ -60,41 +59,14 @@ namespace BTL.Forms.Main
 
         public MainForm(TaiKhoan x)
         {
-
             // tài khoản đã đăng nhập
-            //NhanVien nv = getInfoUser();
-            user = x;
-
-            // Bắt đầu khởi tạo
             InitializeComponent();
-
-            //leftBorderBtn = new Panel();
-           // leftBorderBtn.Size = new Size(7, 60);
-           // panelMenu.Controls.Add(leftBorderBtn);
-            // Tat control text string
-           // this.Text = string.Empty;
-            //this.ControlBox = false;
-           // this.DoubleBuffered = true;
-           // this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-            // Thoi gian
-           // labelTimeHhMm.Text = "";
-           // labelTimeSs.Text = "";
-           // labelHiTen.Text = nv.TenNv;
-
-            //Lay mot cau quote bat ky trong list
-           // Random random = new Random();
-           // int so = random.Next(listHomeCauNoi.Count);
-           // textBox1.Text = listHomeCauNoi[so].ToString();
-
-
-            //ten cua user
-           // avt.Text = nv.TenNv;
+            user = x;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-            nv = getInfoUser();
+            // them cac thong tin cho user ( TT nv)
+            getInfoUser();
 
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
@@ -109,7 +81,7 @@ namespace BTL.Forms.Main
             //timeClock.Enabled = true;
             labelTimeHhMm.Text = "";
             labelTimeSs.Text = "";
-            labelHiTen.Text = nv.TenNv;
+            labelHiTen.Text = user.MaNvNavigation.TenNv;
 
             //Lay mot cau quote bat ky trong list
             Random random = new Random();
@@ -118,7 +90,7 @@ namespace BTL.Forms.Main
 
 
             // Gan ten cua user
-            avt.Text = nv.TenNv;
+            avt.Text = user.MaNvNavigation.TenNv;
 
             // Hien thi cac chuc nang phu hop voi user Admin va Nhan vien
             if(user.ChucVu)
@@ -150,20 +122,16 @@ namespace BTL.Forms.Main
                 btnQuanLyNhaCungCap.Visible = false;
                 btnQuanLyKhachHang.Visible = false;
                 btnThongKe.Visible = false;
-                //
-
             }
         }
 
         // Lấy thong tin ve user
-        private NhanVien getInfoUser()
+        private void getInfoUser()
         {
             string manv = user.MaNv;
-            var nv = db.NhanViens
-                        .Where(p => p.MaNv == manv)
-                        .Select(p => p).FirstOrDefault();
+            var nv = db.NhanViens.Find(manv);
+                        
             user.MaNvNavigation = nv;
-            return nv;
         }
 
         
@@ -421,26 +389,6 @@ namespace BTL.Forms.Main
             labelTimeSs.Text = DateTime.Now.ToString("ss");
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-
-        }
-
-        private void panelLogo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panelView_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -493,7 +441,27 @@ namespace BTL.Forms.Main
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            modal(this, new ChangePassForm());
+            modal(this, new ChangePassForm(user.TenTk));
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelView_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 
 namespace BTL
 {
@@ -62,9 +63,7 @@ namespace BTL
 
             // Lay tai khoan tu db
             TaiKhoan user;
-            user = db.TaiKhoans
-                .Where(p => p.TenTk == taikhoan)
-                .Select(p => p).FirstOrDefault();
+            user = db.TaiKhoans.Find(taikhoan);
 
             // Check xem ton tai tk mk do hay khong
             if (user == null)

@@ -33,10 +33,10 @@ namespace BTL.Forms.User
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnXacNhan = new FontAwesome.Sharp.IconButton();
+            this.txtMatKhauCu = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.txtNhapLaiMK = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -85,52 +85,56 @@ namespace BTL.Forms.User
             this.label4.TabIndex = 3;
             this.label4.Text = "Nhập lại mật khẩu";
             // 
-            // iconButton1
+            // btnXacNhan
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.Transparent;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.ForeColor = System.Drawing.Color.DimGray;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Check;
-            this.iconButton1.IconColor = System.Drawing.Color.DimGray;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.iconButton1.IconSize = 30;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(164, 308);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(99, 36);
-            this.iconButton1.TabIndex = 4;
-            this.iconButton1.Text = "Xác nhận";
-            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btnXacNhan.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnXacNhan.FlatAppearance.BorderSize = 0;
+            this.btnXacNhan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXacNhan.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnXacNhan.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btnXacNhan.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnXacNhan.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnXacNhan.IconSize = 30;
+            this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.Location = new System.Drawing.Point(164, 308);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(99, 36);
+            this.btnXacNhan.TabIndex = 4;
+            this.btnXacNhan.Text = "Xác nhận";
+            this.btnXacNhan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXacNhan.UseVisualStyleBackColor = false;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
-            // textBox1
+            // txtMatKhauCu
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox1.Location = new System.Drawing.Point(86, 126);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(259, 23);
-            this.textBox1.TabIndex = 5;
+            this.txtMatKhauCu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatKhauCu.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtMatKhauCu.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtMatKhauCu.Location = new System.Drawing.Point(86, 126);
+            this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.Size = new System.Drawing.Size(259, 23);
+            this.txtMatKhauCu.TabIndex = 5;
             // 
-            // textBox2
+            // txtMatKhauMoi
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox2.Location = new System.Drawing.Point(86, 194);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(259, 23);
-            this.textBox2.TabIndex = 6;
+            this.txtMatKhauMoi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMatKhauMoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtMatKhauMoi.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(86, 194);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(259, 23);
+            this.txtMatKhauMoi.TabIndex = 6;
             // 
-            // textBox3
+            // txtNhapLaiMK
             // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox3.Location = new System.Drawing.Point(86, 258);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(259, 23);
-            this.textBox3.TabIndex = 7;
+            this.txtNhapLaiMK.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNhapLaiMK.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtNhapLaiMK.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txtNhapLaiMK.Location = new System.Drawing.Point(86, 258);
+            this.txtNhapLaiMK.Name = "txtNhapLaiMK";
+            this.txtNhapLaiMK.Size = new System.Drawing.Size(259, 23);
+            this.txtNhapLaiMK.TabIndex = 7;
             // 
             // label5
             // 
@@ -178,10 +182,11 @@ namespace BTL.Forms.User
             // 
             // btnHuy
             // 
-            this.btnHuy.BackColor = System.Drawing.Color.Transparent;
+            this.btnHuy.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnHuy.FlatAppearance.BorderSize = 0;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHuy.ForeColor = System.Drawing.Color.DimGray;
+            this.btnHuy.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnHuy.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHuy.IconColor = System.Drawing.Color.Black;
             this.btnHuy.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -204,10 +209,10 @@ namespace BTL.Forms.User
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.txtNhapLaiMK);
+            this.Controls.Add(this.txtMatKhauMoi);
+            this.Controls.Add(this.txtMatKhauCu);
+            this.Controls.Add(this.btnXacNhan);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -226,10 +231,10 @@ namespace BTL.Forms.User
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private FontAwesome.Sharp.IconButton btnXacNhan;
+        private System.Windows.Forms.TextBox txtMatKhauCu;
+        private System.Windows.Forms.TextBox txtMatKhauMoi;
+        private System.Windows.Forms.TextBox txtNhapLaiMK;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;

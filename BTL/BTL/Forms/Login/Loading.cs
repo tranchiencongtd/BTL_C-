@@ -15,10 +15,6 @@ namespace BTL.Forms.Login
     public partial class Loading : Form
     {
         public TaiKhoan user;
-        public Loading()
-        {
-            InitializeComponent();
-        }
 
         public Loading(TaiKhoan x)
         {
