@@ -4,7 +4,7 @@
     <Compile Update="Forms\Login\Loading.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Login\Login.cs">
+    <Compile Update="Forms\Login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Main\MainForm.cs">
@@ -41,6 +41,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Main\Views\TrangChu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\User\ChangePassForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\User\InfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

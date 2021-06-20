@@ -13,18 +13,19 @@ using System.Windows.Forms;
 
 namespace BTL
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
 
         QLBanNuocHoaContext db = new QLBanNuocHoaContext();
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            var dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -48,6 +49,16 @@ namespace BTL
         {
             string taikhoan = txtTaiKhoan.Text.Trim();
             string matkhau = txtMatKhau.Text.Trim();
+            try
+            {
+                if (taikhoan.Equals("")) throw new Exception("Tài khoản không được để trống!");
+                if (matkhau.Equals("")) throw new Exception("Mật khẩu không được để trống!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return;
+            }
 
             // Lay tai khoan tu db
             TaiKhoan user;
@@ -58,13 +69,13 @@ namespace BTL
             // Check xem ton tai tk mk do hay khong
             if (user == null)
             {
-                MessageBox.Show("Tên tài khoản hoặc mật khẩu không chính xác");
+                MessageBox.Show("Tên tài khoản không chính xác");
             }
             else
             {
                 if (user.MatKhau != matkhau)
                 {
-                    MessageBox.Show("Tài khoản hoặc mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mật khẩu không chính xác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 Loading load = new Loading(user);

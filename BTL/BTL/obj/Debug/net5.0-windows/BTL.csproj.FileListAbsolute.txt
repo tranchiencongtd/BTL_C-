@@ -7,7 +7,6 @@ D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\ref\BTL.dl
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\BTL.pdb
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\FontAwesome.Sharp.dll
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.csproj.AssemblyReference.cache
-D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Login.resources
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Properties.Resources.resources
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.csproj.GenerateResource.cache
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.GeneratedMSBuildEditorConfig.editorconfig
@@ -69,3 +68,6 @@ D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\runtimes\w
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
+D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.LoginForm.resources
+D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Forms.User.ChangePassForm.resources
+D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Forms.User.InfoForm.resources

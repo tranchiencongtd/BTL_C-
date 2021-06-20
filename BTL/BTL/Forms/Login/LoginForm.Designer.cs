@@ -1,7 +1,7 @@
 ﻿
 namespace BTL
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -66,9 +66,11 @@ namespace BTL
             // checkBoxHienThiMatKhau
             // 
             this.checkBoxHienThiMatKhau.AutoSize = true;
-            this.checkBoxHienThiMatKhau.Location = new System.Drawing.Point(49, 299);
+            this.checkBoxHienThiMatKhau.FlatAppearance.BorderSize = 0;
+            this.checkBoxHienThiMatKhau.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBoxHienThiMatKhau.Location = new System.Drawing.Point(52, 299);
             this.checkBoxHienThiMatKhau.Name = "checkBoxHienThiMatKhau";
-            this.checkBoxHienThiMatKhau.Size = new System.Drawing.Size(121, 19);
+            this.checkBoxHienThiMatKhau.Size = new System.Drawing.Size(118, 19);
             this.checkBoxHienThiMatKhau.TabIndex = 7;
             this.checkBoxHienThiMatKhau.Text = "Hiển thị mật khẩu";
             this.checkBoxHienThiMatKhau.UseVisualStyleBackColor = true;
@@ -117,7 +119,7 @@ namespace BTL
             // 
             this.txtMatKhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtMatKhau.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtMatKhau.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
+            this.txtMatKhau.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtMatKhau.Location = new System.Drawing.Point(86, 249);
             this.txtMatKhau.Multiline = true;
             this.txtMatKhau.Name = "txtMatKhau";
@@ -129,7 +131,7 @@ namespace BTL
             // 
             this.txtTaiKhoan.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtTaiKhoan.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtTaiKhoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(30)))), ((int)(((byte)(47)))));
+            this.txtTaiKhoan.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txtTaiKhoan.Location = new System.Drawing.Point(86, 175);
             this.txtTaiKhoan.Multiline = true;
             this.txtTaiKhoan.Name = "txtTaiKhoan";
@@ -155,9 +157,9 @@ namespace BTL
             // iconPictureBox2
             // 
             this.iconPictureBox2.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(101)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.Color.DodgerBlue;
             this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Key;
-            this.iconPictureBox2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(101)))));
+            this.iconPictureBox2.IconColor = System.Drawing.Color.DodgerBlue;
             this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconPictureBox2.Location = new System.Drawing.Point(48, 243);
             this.iconPictureBox2.Name = "iconPictureBox2";
@@ -168,9 +170,9 @@ namespace BTL
             // iconPictureBox1
             // 
             this.iconPictureBox1.BackColor = System.Drawing.Color.White;
-            this.iconPictureBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(101)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
-            this.iconPictureBox1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(101)))));
+            this.iconPictureBox1.IconColor = System.Drawing.Color.DodgerBlue;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Solid;
             this.iconPictureBox1.Location = new System.Drawing.Point(48, 170);
             this.iconPictureBox1.Name = "iconPictureBox1";
@@ -182,14 +184,14 @@ namespace BTL
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 27F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(65)))), ((int)(((byte)(101)))));
+            this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(105, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 48);
             this.label1.TabIndex = 0;
             this.label1.Text = "Đăng nhập";
             // 
-            // Login
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,7 +201,7 @@ namespace BTL
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
-            this.Name = "Login";
+            this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Login_Load);

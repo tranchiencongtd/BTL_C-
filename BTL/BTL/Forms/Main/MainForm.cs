@@ -9,7 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BTL.Forms.Main.Views;
+using BTL.Forms.User;
 using BTL.Models;
+
 using FontAwesome.Sharp;
 
 namespace BTL.Forms.Main
@@ -17,6 +19,7 @@ namespace BTL.Forms.Main
     public partial class MainForm : Form
     {
         // Db, TaiKhoan
+        NhanVien nv;
         public TaiKhoan user;
         QLBanNuocHoaContext db = new QLBanNuocHoaContext();
 
@@ -85,13 +88,13 @@ namespace BTL.Forms.Main
            // textBox1.Text = listHomeCauNoi[so].ToString();
 
 
-            // Gan avt va ten cua user
+            //ten cua user
            // avt.Text = nv.TenNv;
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
 
-            NhanVien nv = getInfoUser();
+            nv = getInfoUser();
 
             leftBorderBtn = new Panel();
             leftBorderBtn.Size = new Size(7, 60);
@@ -114,8 +117,42 @@ namespace BTL.Forms.Main
             textBox1.Text = listHomeCauNoi[so].ToString();
 
 
-            // Gan avt va ten cua user
+            // Gan ten cua user
             avt.Text = nv.TenNv;
+
+            // Hien thi cac chuc nang phu hop voi user Admin va Nhan vien
+            if(user.ChucVu)
+            {
+                //Cho admin
+                btnQuanLyTaiKhoan.Visible = true;
+                btnQuanLySanPham.Visible = true;
+                btnQuanLyNhapHang.Visible = true;
+                btnQuanLyNhanVien.Visible = true;
+                btnQuanLyNhaCungCap.Visible = true;
+                btnQuanLyKhuyenMai.Visible = true;
+                btnQuanLyKhachHang.Visible = true;
+                btnQuanLyHoaDon.Visible = true;
+                btnQuanLyDanhMuc.Visible = true;
+                btnThongKe.Visible = true;
+            } else
+            {
+
+                // Cho nhan vien
+                btnQuanLySanPham.Visible = true;
+                btnQuanLyDanhMuc.Visible = true;
+                btnQuanLyKhuyenMai.Visible = true;
+                btnQuanLyHoaDon.Visible = true;
+
+                //-------------------------
+                btnQuanLyNhapHang.Visible = false;
+                btnQuanLyTaiKhoan.Visible = false;
+                btnQuanLyNhanVien.Visible = false;
+                btnQuanLyNhaCungCap.Visible = false;
+                btnQuanLyKhachHang.Visible = false;
+                btnThongKe.Visible = false;
+                //
+
+            }
         }
 
         // Lấy thong tin ve user
@@ -125,6 +162,7 @@ namespace BTL.Forms.Main
             var nv = db.NhanViens
                         .Where(p => p.MaNv == manv)
                         .Select(p => p).FirstOrDefault();
+            user.MaNvNavigation = nv;
             return nv;
         }
 
@@ -302,7 +340,8 @@ namespace BTL.Forms.Main
         // Control form
         private void btnDong_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            var dr = MessageBox.Show("Bạn có chắc chắn muốn thoát", "Thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if ( dr == DialogResult.Yes)
             {
                 Application.Exit();
             }
@@ -400,6 +439,61 @@ namespace BTL.Forms.Main
         private void panelView_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm login = new LoginForm();
+            login.Show();
+        }
+
+
+        // Modal form
+        private void modal(Form parent, Form child)
+        {
+            Form formBackground = new Form();
+            try
+            {
+                using (child)
+                {
+                    // Tao background 
+                    formBackground.StartPosition = FormStartPosition.Manual;
+                    formBackground.FormBorderStyle = FormBorderStyle.None;
+                    formBackground.Opacity = .50d;
+                    formBackground.BackColor = Color.Black;
+                    formBackground.TopMost = true;
+                    formBackground.Location = parent.Location;
+                    formBackground.Size = parent.Size;
+                    formBackground.ShowInTaskbar = false;
+                    formBackground.Show();
+
+                    // Hien thi modal
+                    child.Owner = formBackground;
+                    child.StartPosition = FormStartPosition.CenterParent; // Hien thi form o giua
+                    child.FormBorderStyle = FormBorderStyle.None;
+                    child.ShowDialog();
+
+                    formBackground.Dispose();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                formBackground.Dispose();
+            }
+        }
+        private void btnXemInfo_Click(object sender, EventArgs e)
+        {
+            modal(this, new InfoForm(user));
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            modal(this, new ChangePassForm());
         }
     }
 }
