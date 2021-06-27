@@ -153,10 +153,10 @@ namespace BTL.Forms.User
             // 
             // btnHuy
             // 
-            this.btnHuy.BackColor = System.Drawing.Color.Transparent;
+            this.btnHuy.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHuy.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHuy.ForeColor = System.Drawing.Color.DimGray;
+            this.btnHuy.ForeColor = System.Drawing.Color.White;
             this.btnHuy.IconChar = FontAwesome.Sharp.IconChar.None;
             this.btnHuy.IconColor = System.Drawing.Color.Black;
             this.btnHuy.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -164,7 +164,7 @@ namespace BTL.Forms.User
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(123, 33);
             this.btnHuy.TabIndex = 10;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "HỦY";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 

@@ -636,7 +636,7 @@ namespace BTL.Forms.Main
             this.labelTimeSs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelTimeSs.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTimeSs.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelTimeSs.Location = new System.Drawing.Point(390, 50);
+            this.labelTimeSs.Location = new System.Drawing.Point(391, 49);
             this.labelTimeSs.Margin = new System.Windows.Forms.Padding(0);
             this.labelTimeSs.Name = "labelTimeSs";
             this.labelTimeSs.Size = new System.Drawing.Size(49, 37);
@@ -646,6 +646,7 @@ namespace BTL.Forms.Main
             // labelTimeHhMm
             // 
             this.labelTimeHhMm.AutoSize = true;
+            this.labelTimeHhMm.BackColor = System.Drawing.Color.Transparent;
             this.labelTimeHhMm.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelTimeHhMm.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelTimeHhMm.Location = new System.Drawing.Point(163, 43);
@@ -657,9 +658,10 @@ namespace BTL.Forms.Main
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(98, 148);
+            this.label1.Location = new System.Drawing.Point(87, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(76, 54);
             this.label1.TabIndex = 1;
@@ -668,9 +670,10 @@ namespace BTL.Forms.Main
             // labelHiTen
             // 
             this.labelHiTen.AutoSize = true;
+            this.labelHiTen.BackColor = System.Drawing.Color.Transparent;
             this.labelHiTen.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelHiTen.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelHiTen.Location = new System.Drawing.Point(164, 148);
+            this.labelHiTen.Location = new System.Drawing.Point(155, 148);
             this.labelHiTen.Name = "labelHiTen";
             this.labelHiTen.Size = new System.Drawing.Size(331, 54);
             this.labelHiTen.TabIndex = 3;

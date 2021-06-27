@@ -199,7 +199,7 @@ namespace BTL.Forms.User
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(89, 34);
             this.btnHuy.TabIndex = 12;
-            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Text = "HỦY";
             this.btnHuy.UseVisualStyleBackColor = false;
             this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 

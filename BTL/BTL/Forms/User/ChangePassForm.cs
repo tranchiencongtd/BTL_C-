@@ -45,7 +45,7 @@ namespace BTL.Forms.User
                 if (!Regex.IsMatch(newMK, regex)) throw new Exception("Mật khẩu không đúng định dạng");
                 if (!newMK.Equals(confirmMK)) throw new Exception("Mật khẩu nhập lại chưa khớp");
 
-                using (QLBanNuocHoaContext db = new QLBanNuocHoaContext())
+                using (QLBanMyPhamContext db = new QLBanMyPhamContext())
                 {
                     TaiKhoan tk = db.TaiKhoans.Find(tenTK);
                     tk.MatKhau = txtMatKhauMoi.Text;

@@ -20,7 +20,7 @@ namespace BTL.Forms.Main
     {
         // Db, TaiKhoan
         public TaiKhoan user;
-        QLBanNuocHoaContext db = new QLBanNuocHoaContext();
+        QLBanMyPhamContext db = new QLBanMyPhamContext();
 
         // Cac truong
         private IconButton currentBtn;
@@ -34,7 +34,6 @@ namespace BTL.Forms.Main
                     "Không có hoàn cảnh nào tuyệt vọng, chỉ có người tuyệt vọng vì hoàn cảnh.",
                     "Bắt đầu từ nơi bạn đứng. Sử dụng những gì bạn có. Làm những gì bạn có thể.",
                     "Cuộc sống chỉ mang lại cho chúng ta 10% cơ hội, 90% còn lại là do chúng ta trải nghiệm thế nào với nó.",
-                    "Nơi lạnh nhất không phải là Bắc cực mà là nơi không có tình người.",
                     "Chúng ta không nên bỏ cuộc, chúng ta không nên đề những khó khăn đánh bại mình.",
                     "Đừng ngại thay đổi. Bạn có thể mất một cái gì đó tốt nhưng bạn có thể đạt được một cái gì đó còn tốt hơn.",
                     "Chúng ta phải lựa chọn: nỗi đau của sự kỷ luật hay nỗi đau của sự hối hận.",

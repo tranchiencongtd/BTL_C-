@@ -17,7 +17,7 @@ namespace BTL
     public partial class LoginForm : Form
     {
 
-        QLBanNuocHoaContext db = new QLBanNuocHoaContext();
+        QLBanMyPhamContext db = new QLBanMyPhamContext();
         public LoginForm()
         {
             InitializeComponent();
