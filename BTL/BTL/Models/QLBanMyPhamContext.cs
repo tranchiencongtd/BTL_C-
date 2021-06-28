@@ -36,7 +36,7 @@ namespace BTL.Models
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=CongIT;Initial Catalog=QLBanMyPham;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=CONGIT;Initial Catalog=QLBanMyPham;Integrated Security=True");
             }
         }
 
@@ -47,7 +47,7 @@ namespace BTL.Models
             modelBuilder.Entity<CuaHang>(entity =>
             {
                 entity.HasKey(e => e.MaCuaHang)
-                    .HasName("PK__CuaHang__0840BCA6553001BE");
+                    .HasName("PK__CuaHang__0840BCA62C315AAD");
 
                 entity.ToTable("CuaHang");
 
@@ -71,7 +71,7 @@ namespace BTL.Models
             modelBuilder.Entity<DanhMuc>(entity =>
             {
                 entity.HasKey(e => e.MaDm)
-                    .HasName("PK__DanhMuc__2725866E9302A892");
+                    .HasName("PK__DanhMuc__2725866EB1CF973E");
 
                 entity.ToTable("DanhMuc");
 
@@ -88,11 +88,15 @@ namespace BTL.Models
             modelBuilder.Entity<DongPhieuNhap>(entity =>
             {
                 entity.HasKey(e => new { e.MaPhieuNhap, e.MaSp })
-                    .HasName("PK__DongPhie__C602BFBAC4BD4169");
+                    .HasName("PK__DongPhie__C602BFBA812388E7");
 
                 entity.ToTable("DongPhieuNhap");
 
-                entity.Property(e => e.MaSp).HasColumnName("MaSP");
+                entity.Property(e => e.MaPhieuNhap).HasMaxLength(20);
+
+                entity.Property(e => e.MaSp)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaSP");
 
                 entity.Property(e => e.GiaNhap).HasColumnType("money");
 
@@ -100,23 +104,30 @@ namespace BTL.Models
                     .WithMany(p => p.DongPhieuNhaps)
                     .HasForeignKey(d => d.MaPhieuNhap)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__DongPhieu__MaPhi__46E78A0C");
+                    .HasConstraintName("FK__DongPhieu__MaPhi__3B75D760");
 
                 entity.HasOne(d => d.MaSpNavigation)
                     .WithMany(p => p.DongPhieuNhaps)
                     .HasForeignKey(d => d.MaSp)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__DongPhieuN__MaSP__412EB0B6");
+                    .HasConstraintName("FK__DongPhieuN__MaSP__3C69FB99");
             });
 
             modelBuilder.Entity<HoaDon>(entity =>
             {
                 entity.HasKey(e => e.MaHd)
-                    .HasName("PK__HoaDon__2725A6E02C4346C9");
+                    .HasName("PK__HoaDon__2725A6E0D6C960A7");
 
                 entity.ToTable("HoaDon");
 
-                entity.Property(e => e.MaHd).HasColumnName("MaHD");
+                entity.Property(e => e.MaHd)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaHD");
+
+                entity.Property(e => e.MaKh)
+                    .IsRequired()
+                    .HasMaxLength(20)
+                    .HasColumnName("MaKH");
 
                 entity.Property(e => e.MaNv)
                     .IsRequired()
@@ -125,32 +136,32 @@ namespace BTL.Models
 
                 entity.Property(e => e.NgayLap).HasColumnType("datetime");
 
-                entity.Property(e => e.Sdt)
-                    .IsRequired()
-                    .HasMaxLength(11)
-                    .HasColumnName("SDT");
+                entity.HasOne(d => d.MaKhNavigation)
+                    .WithMany(p => p.HoaDons)
+                    .HasForeignKey(d => d.MaKh)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK__HoaDon__MaKH__3D5E1FD2");
 
                 entity.HasOne(d => d.MaNvNavigation)
                     .WithMany(p => p.HoaDons)
                     .HasForeignKey(d => d.MaNv)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__HoaDon__MaNV__4316F928");
-
-                entity.HasOne(d => d.SdtNavigation)
-                    .WithMany(p => p.HoaDons)
-                    .HasForeignKey(d => d.Sdt)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__HoaDon__SDT__3E52440B");
+                    .HasConstraintName("FK__HoaDon__MaNV__3E52440B");
             });
 
             modelBuilder.Entity<KhachHang>(entity =>
             {
-                entity.HasKey(e => e.Sdt)
-                    .HasName("PK__KhachHan__CA1930A40C58E845");
+                entity.HasKey(e => e.MaKh)
+                    .HasName("PK__KhachHan__2725CF1EE62C9AFD");
 
                 entity.ToTable("KhachHang");
 
+                entity.Property(e => e.MaKh)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaKH");
+
                 entity.Property(e => e.Sdt)
+                    .IsRequired()
                     .HasMaxLength(11)
                     .HasColumnName("SDT");
 
@@ -162,11 +173,13 @@ namespace BTL.Models
             modelBuilder.Entity<KhuyenMai>(entity =>
             {
                 entity.HasKey(e => e.MaKm)
-                    .HasName("PK__KhuyenMa__2725CF159ED42328");
+                    .HasName("PK__KhuyenMa__2725CF156855E08B");
 
                 entity.ToTable("KhuyenMai");
 
-                entity.Property(e => e.MaKm).HasColumnName("MaKM");
+                entity.Property(e => e.MaKm)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaKM");
 
                 entity.Property(e => e.NgayBd)
                     .HasColumnType("datetime")
@@ -180,7 +193,7 @@ namespace BTL.Models
             modelBuilder.Entity<NhaCc>(entity =>
             {
                 entity.HasKey(e => e.MaNcc)
-                    .HasName("PK__NhaCC__3A185DEBF4EADA56");
+                    .HasName("PK__NhaCC__3A185DEB4883957D");
 
                 entity.ToTable("NhaCC");
 
@@ -213,7 +226,7 @@ namespace BTL.Models
             modelBuilder.Entity<NhanVien>(entity =>
             {
                 entity.HasKey(e => e.MaNv)
-                    .HasName("PK__NhanVien__2725D70AFC4EE690");
+                    .HasName("PK__NhanVien__2725D70A91300C20");
 
                 entity.ToTable("NhanVien");
 
@@ -240,15 +253,17 @@ namespace BTL.Models
                     .WithMany(p => p.NhanViens)
                     .HasForeignKey(d => d.MaCuaHang)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__NhanVien__MaCuaH__3B75D760");
+                    .HasConstraintName("FK__NhanVien__MaCuaH__3F466844");
             });
 
             modelBuilder.Entity<PhieuNhap>(entity =>
             {
                 entity.HasKey(e => e.MaPhieuNhap)
-                    .HasName("PK__PhieuNha__1470EF3BBA1470C1");
+                    .HasName("PK__PhieuNha__1470EF3B46A49B30");
 
                 entity.ToTable("PhieuNhap");
+
+                entity.Property(e => e.MaPhieuNhap).HasMaxLength(20);
 
                 entity.Property(e => e.MaCuaHang)
                     .IsRequired()
@@ -271,23 +286,25 @@ namespace BTL.Models
                     .WithMany(p => p.PhieuNhaps)
                     .HasForeignKey(d => d.MaCuaHang)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__PhieuNhap__MaCua__3C69FB99");
+                    .HasConstraintName("FK__PhieuNhap__MaCua__403A8C7D");
 
                 entity.HasOne(d => d.MaNccNavigation)
                     .WithMany(p => p.PhieuNhaps)
                     .HasForeignKey(d => d.MaNcc)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__PhieuNhap__MaNCC__44FF419A");
+                    .HasConstraintName("FK__PhieuNhap__MaNCC__412EB0B6");
             });
 
             modelBuilder.Entity<SanPham>(entity =>
             {
                 entity.HasKey(e => e.MaSp)
-                    .HasName("PK__SanPham__2725081C09DF0D95");
+                    .HasName("PK__SanPham__2725081CC9F4D1C5");
 
                 entity.ToTable("SanPham");
 
-                entity.Property(e => e.MaSp).HasColumnName("MaSP");
+                entity.Property(e => e.MaSp)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaSP");
 
                 entity.Property(e => e.DonGia).HasColumnType("money");
 
@@ -319,19 +336,23 @@ namespace BTL.Models
                     .WithMany(p => p.SanPhams)
                     .HasForeignKey(d => d.MaDm)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__SanPham__MaDM__45F365D3");
+                    .HasConstraintName("FK__SanPham__MaDM__4222D4EF");
             });
 
             modelBuilder.Entity<SanPhamKm>(entity =>
             {
                 entity.HasKey(e => new { e.MaKm, e.MaSp })
-                    .HasName("PK__SanPhamK__F5579F94C317FCAB");
+                    .HasName("PK__SanPhamK__F5579F941D135435");
 
                 entity.ToTable("SanPhamKM");
 
-                entity.Property(e => e.MaKm).HasColumnName("MaKM");
+                entity.Property(e => e.MaKm)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaKM");
 
-                entity.Property(e => e.MaSp).HasColumnName("MaSP");
+                entity.Property(e => e.MaSp)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaSP");
 
                 entity.Property(e => e.GiaKm).HasColumnName("GiaKM");
 
@@ -339,19 +360,19 @@ namespace BTL.Models
                     .WithMany(p => p.SanPhamKms)
                     .HasForeignKey(d => d.MaKm)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__SanPhamKM__MaKM__4222D4EF");
+                    .HasConstraintName("FK__SanPhamKM__MaKM__4316F928");
 
                 entity.HasOne(d => d.MaSpNavigation)
                     .WithMany(p => p.SanPhamKms)
                     .HasForeignKey(d => d.MaSp)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__SanPhamKM__MaSP__403A8C7D");
+                    .HasConstraintName("FK__SanPhamKM__MaSP__440B1D61");
             });
 
             modelBuilder.Entity<TaiKhoan>(entity =>
             {
                 entity.HasKey(e => e.TenTk)
-                    .HasName("PK__TaiKhoan__4CF9E77643CE88F4");
+                    .HasName("PK__TaiKhoan__4CF9E776A868FB75");
 
                 entity.ToTable("TaiKhoan");
 
@@ -372,31 +393,35 @@ namespace BTL.Models
                     .WithMany(p => p.TaiKhoans)
                     .HasForeignKey(d => d.MaNv)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__TaiKhoan__MaNV__440B1D61");
+                    .HasConstraintName("FK__TaiKhoan__MaNV__44FF419A");
             });
 
             modelBuilder.Entity<ThongTinHd>(entity =>
             {
                 entity.HasKey(e => new { e.MaHd, e.MaSp })
-                    .HasName("PK__ThongTin__F557F66150934A5D");
+                    .HasName("PK__ThongTin__F557F661D113B957");
 
                 entity.ToTable("ThongTinHD");
 
-                entity.Property(e => e.MaHd).HasColumnName("MaHD");
+                entity.Property(e => e.MaHd)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaHD");
 
-                entity.Property(e => e.MaSp).HasColumnName("MaSP");
+                entity.Property(e => e.MaSp)
+                    .HasMaxLength(20)
+                    .HasColumnName("MaSP");
 
                 entity.HasOne(d => d.MaHdNavigation)
                     .WithMany(p => p.ThongTinHds)
                     .HasForeignKey(d => d.MaHd)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ThongTinHD__MaHD__3D5E1FD2");
+                    .HasConstraintName("FK__ThongTinHD__MaHD__45F365D3");
 
                 entity.HasOne(d => d.MaSpNavigation)
                     .WithMany(p => p.ThongTinHds)
                     .HasForeignKey(d => d.MaSp)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__ThongTinHD__MaSP__3F466844");
+                    .HasConstraintName("FK__ThongTinHD__MaSP__46E78A0C");
             });
 
             OnModelCreatingPartial(modelBuilder);

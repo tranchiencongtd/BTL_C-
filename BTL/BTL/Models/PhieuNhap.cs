@@ -12,7 +12,7 @@ namespace BTL.Models
             DongPhieuNhaps = new HashSet<DongPhieuNhap>();
         }
 
-        public int MaPhieuNhap { get; set; }
+        public string MaPhieuNhap { get; set; }
         public string MaCuaHang { get; set; }
         public string MaNcc { get; set; }
         public DateTime NgayNhap { get; set; }

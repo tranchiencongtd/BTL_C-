@@ -4,7 +4,7 @@ using System.Collections.Generic;
 #nullable disable
 
 namespace BTL.Models
-{
+{ 
     public partial class DanhMuc
     {
         public DanhMuc()

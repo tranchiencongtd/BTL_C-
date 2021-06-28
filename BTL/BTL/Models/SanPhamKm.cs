@@ -7,8 +7,8 @@ namespace BTL.Models
 {
     public partial class SanPhamKm
     {
-        public int MaKm { get; set; }
-        public int MaSp { get; set; }
+        public string MaKm { get; set; }
+        public string MaSp { get; set; }
         public int? GiaKm { get; set; }
 
         public virtual KhuyenMai MaKmNavigation { get; set; }

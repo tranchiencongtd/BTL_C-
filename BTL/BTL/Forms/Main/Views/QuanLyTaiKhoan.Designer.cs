@@ -54,8 +54,12 @@ namespace BTL.Forms.Main.Views
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.btnXoaTrang = new FontAwesome.Sharp.IconButton();
             this.btnTaiLai = new FontAwesome.Sharp.IconButton();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelGioiTinh = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.btnTimKiem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewAccount)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -212,7 +216,7 @@ namespace BTL.Forms.Main.Views
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBox3.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.textBox3.Location = new System.Drawing.Point(41, 142);
+            this.textBox3.Location = new System.Drawing.Point(0, 5);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(332, 27);
@@ -223,12 +227,12 @@ namespace BTL.Forms.Main.Views
             this.btnTimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnTimKiem.BackColor = System.Drawing.Color.Transparent;
             this.btnTimKiem.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTimKiem.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.btnTimKiem.ForeColor = System.Drawing.Color.DodgerBlue;
             this.btnTimKiem.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btnTimKiem.IconColor = System.Drawing.Color.MidnightBlue;
+            this.btnTimKiem.IconColor = System.Drawing.Color.DodgerBlue;
             this.btnTimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTimKiem.IconSize = 30;
-            this.btnTimKiem.Location = new System.Drawing.Point(376, 143);
+            this.btnTimKiem.Location = new System.Drawing.Point(335, 6);
             this.btnTimKiem.Margin = new System.Windows.Forms.Padding(0);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(30, 30);
@@ -267,6 +271,7 @@ namespace BTL.Forms.Main.Views
             this.dataViewAccount.AllowUserToDeleteRows = false;
             this.dataViewAccount.AllowUserToOrderColumns = true;
             this.dataViewAccount.AllowUserToResizeRows = false;
+            this.dataViewAccount.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dataViewAccount.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataViewAccount.BackgroundColor = System.Drawing.Color.MintCream;
             this.dataViewAccount.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -412,7 +417,7 @@ namespace BTL.Forms.Main.Views
             this.btnTaiLai.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTaiLai.IconSize = 25;
             this.btnTaiLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTaiLai.Location = new System.Drawing.Point(471, 139);
+            this.btnTaiLai.Location = new System.Drawing.Point(430, 2);
             this.btnTaiLai.Name = "btnTaiLai";
             this.btnTaiLai.Size = new System.Drawing.Size(102, 30);
             this.btnTaiLai.TabIndex = 19;
@@ -422,20 +427,57 @@ namespace BTL.Forms.Main.Views
             this.btnTaiLai.UseVisualStyleBackColor = false;
             this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.btnTaiLai);
+            this.panel1.Controls.Add(this.btnTimKiem);
+            this.panel1.Location = new System.Drawing.Point(41, 138);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(532, 36);
+            this.panel1.TabIndex = 20;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(830, 329);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(69, 20);
+            this.label6.TabIndex = 21;
+            this.label6.Text = "Giới tính";
+            // 
+            // labelGioiTinh
+            // 
+            this.labelGioiTinh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelGioiTinh.AutoSize = true;
+            this.labelGioiTinh.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelGioiTinh.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.labelGioiTinh.Location = new System.Drawing.Point(905, 329);
+            this.labelGioiTinh.Name = "labelGioiTinh";
+            this.labelGioiTinh.Size = new System.Drawing.Size(0, 20);
+            this.labelGioiTinh.TabIndex = 22;
+            // 
             // QuanLyTaiKhoan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1055, 612);
-            this.Controls.Add(this.btnTaiLai);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnXoaTrang);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dataViewAccount);
             this.Controls.Add(this.labelHoTen);
+            this.Controls.Add(this.labelGioiTinh);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.btnTimKiem);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
@@ -450,6 +492,8 @@ namespace BTL.Forms.Main.Views
             this.Load += new System.EventHandler(this.QuanLyTaiKhoan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnTimKiem)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewAccount)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,5 +522,8 @@ namespace BTL.Forms.Main.Views
         private System.Windows.Forms.DataGridViewTextBoxColumn mnv;
         private FontAwesome.Sharp.IconButton btnXoaTrang;
         private FontAwesome.Sharp.IconButton btnTaiLai;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelGioiTinh;
     }
 }

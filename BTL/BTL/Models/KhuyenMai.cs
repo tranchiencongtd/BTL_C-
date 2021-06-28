@@ -12,7 +12,7 @@ namespace BTL.Models
             SanPhamKms = new HashSet<SanPhamKm>();
         }
 
-        public int MaKm { get; set; }
+        public string MaKm { get; set; }
         public int? GiamGia { get; set; }
         public DateTime? NgayBd { get; set; }
         public DateTime? NgayKt { get; set; }

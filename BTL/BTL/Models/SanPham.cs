@@ -14,7 +14,7 @@ namespace BTL.Models
             ThongTinHds = new HashSet<ThongTinHd>();
         }
 
-        public int MaSp { get; set; }
+        public string MaSp { get; set; }
         public string TenSp { get; set; }
         public int Slton { get; set; }
         public decimal DonGia { get; set; }

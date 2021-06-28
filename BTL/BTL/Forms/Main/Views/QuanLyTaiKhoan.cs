@@ -40,10 +40,11 @@ namespace BTL.Forms.Main.Views
             // Hien thi Data
             hienThiData();
 
-            // Ds tai khoan + Ten nv
+            // Ds tai khoan + Ten nv + gioi tinh
             var dsNV = db.NhanViens.Select(s => new { 
                 maNv = s.MaNv,
                 tenNV = s.TenNv,
+                gioiTinh = s.GioiTinh,
             }).ToList();
 
             // Show data vao grid view
@@ -70,12 +71,14 @@ namespace BTL.Forms.Main.Views
             if (index == -1)
             {
                 labelHoTen.Text = "";
+                labelGioiTinh.Text = "";
             }
             else
             {
                 string selectedItem = comboBox1.Items[index].ToString();
-                string ten = db.NhanViens.Find(selectedItem).TenNv;
-                labelHoTen.Text = ten;
+                var nv = db.NhanViens.Find(selectedItem);
+                labelHoTen.Text = nv.TenNv;
+                labelGioiTinh.Text = nv.GioiTinh == true?"Nam":"Nữ";
             }
         }
 

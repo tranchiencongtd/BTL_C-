@@ -12,6 +12,7 @@ namespace BTL.Models
             HoaDons = new HashSet<HoaDon>();
         }
 
+        public string MaKh { get; set; }
         public string TenKh { get; set; }
         public string Sdt { get; set; }
         public int? TichDiem { get; set; }
