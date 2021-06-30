@@ -11,7 +11,8 @@
           "FontAwesome.Sharp": "5.15.3",
           "Microsoft.EntityFrameworkCore": "5.0.7",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.7",
-          "Microsoft.EntityFrameworkCore.Tools": "5.0.7"
+          "Microsoft.EntityFrameworkCore.Tools": "5.0.7",
+          "Nanoid": "2.1.0"
         },
         "runtime": {
           "BTL.dll": {}
@@ -367,6 +368,14 @@
       "Microsoft.Win32.SystemEvents/4.7.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0"
+        }
+      },
+      "Nanoid/2.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/Nanoid.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
+          }
         }
       },
       "Newtonsoft.Json/10.0.1": {
@@ -1225,6 +1234,13 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
+    },
+    "Nanoid/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V0eSnsq+Oeqf9uVPBH02kYE5p92s6Revskt4Cmqg3DIsiDoqrKKdlmqXvaFaehO3pS1Osu9BTtl3lMSRqPlbzw==",
+      "path": "nanoid/2.1.0",
+      "hashPath": "nanoid.2.1.0.nupkg.sha512"
     },
     "Newtonsoft.Json/10.0.1": {
       "type": "package",

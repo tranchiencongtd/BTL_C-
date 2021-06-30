@@ -71,3 +71,6 @@ D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\runtimes\w
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.LoginForm.resources
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Forms.User.ChangePassForm.resources
 D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Forms.User.InfoForm.resources
+D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\bin\Debug\net5.0-windows\Nanoid.dll
+D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Forms.Main.Employee.AddForm.resources
+D:\TAI_LIEU_NAM_5\Windows\ALL_IN_BTL\BTL\BTL\obj\Debug\net5.0-windows\BTL.Forms.Main.Employee.EditForm.resources

@@ -93,16 +93,6 @@ namespace BTL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cfe766536051940fcd40 {
-            get {
-                object obj = ResourceManager.GetObject("cfe766536051940fcd40", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap logofooter_min_1 {
             get {
                 object obj = ResourceManager.GetObject("logofooter_min_1", resourceCulture);
@@ -116,6 +106,16 @@ namespace BTL.Properties {
         internal static System.Drawing.Bitmap logohead_min {
             get {
                 object obj = ResourceManager.GetObject("logohead_min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap noavt {
+            get {
+                object obj = ResourceManager.GetObject("noavt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

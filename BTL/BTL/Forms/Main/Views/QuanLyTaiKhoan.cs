@@ -16,8 +16,7 @@ namespace BTL.Forms.Main.Views
     public partial class QuanLyTaiKhoan : Form
     {
         QLBanMyPhamContext db = new QLBanMyPhamContext();
-       
-        
+
         public QuanLyTaiKhoan()
         {
             InitializeComponent();

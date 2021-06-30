@@ -11,7 +11,7 @@ using System.Windows.Forms;
 using BTL.Forms.Main.Views;
 using BTL.Forms.User;
 using BTL.Models;
-
+using BTL.Ultilities;
 using FontAwesome.Sharp;
 
 namespace BTL.Forms.Main
@@ -235,7 +235,7 @@ namespace BTL.Forms.Main
         private void btnQuanLyNhanVien_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
-            OpenChildForm(new QuanLyNhanVien());
+            OpenChildForm(new QuanLyNhanVien(this));
         }
 
         private void btnQuanLyNhaCungCap_Click(object sender, EventArgs e)
@@ -396,51 +396,15 @@ namespace BTL.Forms.Main
         }
 
 
-        // Modal form
-        private void modal(Form parent, Form child)
-        {
-            Form formBackground = new Form();
-            try
-            {
-                using (child)
-                {
-                    // Tao background 
-                    formBackground.StartPosition = FormStartPosition.Manual;
-                    formBackground.FormBorderStyle = FormBorderStyle.None;
-                    formBackground.Opacity = .50d;
-                    formBackground.BackColor = Color.Black;
-                    formBackground.TopMost = true;
-                    formBackground.Location = parent.Location;
-                    formBackground.Size = parent.Size;
-                    formBackground.ShowInTaskbar = false;
-                    formBackground.Show();
-
-                    // Hien thi modal
-                    child.Owner = formBackground;
-                    child.StartPosition = FormStartPosition.CenterParent; // Hien thi form o giua
-                    child.FormBorderStyle = FormBorderStyle.None;
-                    child.ShowDialog();
-
-                    formBackground.Dispose();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                formBackground.Dispose();
-            }
-        }
+        // Modal
         private void btnXemInfo_Click(object sender, EventArgs e)
         {
-            modal(this, new InfoForm(user));
+            Ultility.modal(this, new InfoForm(user));
         }
 
         private void btnDoiMatKhau_Click(object sender, EventArgs e)
         {
-            modal(this, new ChangePassForm(user.TenTk));
+            Ultility.modal(this, new ChangePassForm(user.TenTk));
         }
 
         private void button1_Click(object sender, EventArgs e)

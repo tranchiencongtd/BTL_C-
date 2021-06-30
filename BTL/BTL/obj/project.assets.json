@@ -441,6 +441,15 @@
           }
         }
       },
+      "Nanoid/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Nanoid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/Nanoid.dll": {}
+        }
+      },
       "Newtonsoft.Json/10.0.1": {
         "type": "package",
         "dependencies": {
@@ -2267,6 +2276,23 @@
         "runtimes/win/lib/netcoreapp3.0/Microsoft.Win32.SystemEvents.xml",
         "useSharedDesignerContext.txt",
         "version.txt"
+      ]
+    },
+    "Nanoid/2.1.0": {
+      "sha512": "V0eSnsq+Oeqf9uVPBH02kYE5p92s6Revskt4Cmqg3DIsiDoqrKKdlmqXvaFaehO3pS1Osu9BTtl3lMSRqPlbzw==",
+      "type": "package",
+      "path": "nanoid/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Nanoid.dll",
+        "lib/net45/Nanoid.xml",
+        "lib/netstandard2.0/Nanoid.dll",
+        "lib/netstandard2.0/Nanoid.xml",
+        "lib/netstandard2.1/Nanoid.dll",
+        "lib/netstandard2.1/Nanoid.xml",
+        "nanoid.2.1.0.nupkg.sha512",
+        "nanoid.nuspec"
       ]
     },
     "Newtonsoft.Json/10.0.1": {
@@ -5822,7 +5848,8 @@
       "FontAwesome.Sharp >= 5.15.3",
       "Microsoft.EntityFrameworkCore >= 5.0.7",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.7",
-      "Microsoft.EntityFrameworkCore.Tools >= 5.0.7"
+      "Microsoft.EntityFrameworkCore.Tools >= 5.0.7",
+      "Nanoid >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -5881,6 +5908,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[5.0.7, )"
+          },
+          "Nanoid": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           }
         },
         "imports": [

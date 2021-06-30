@@ -101,14 +101,13 @@ namespace BTL.Forms.Main.Views
             this.btnThem.IconColor = System.Drawing.Color.White;
             this.btnThem.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnThem.IconSize = 25;
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(592, 439);
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThem.Location = new System.Drawing.Point(597, 460);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(102, 37);
             this.btnThem.TabIndex = 3;
             this.btnThem.Text = "Thêm";
-            this.btnThem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
@@ -125,14 +124,13 @@ namespace BTL.Forms.Main.Views
             this.btnSua.IconColor = System.Drawing.Color.White;
             this.btnSua.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSua.IconSize = 25;
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(709, 439);
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSua.Location = new System.Drawing.Point(714, 460);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(102, 37);
             this.btnSua.TabIndex = 4;
             this.btnSua.Text = "Sửa";
-            this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
@@ -149,14 +147,13 @@ namespace BTL.Forms.Main.Views
             this.btnXoa.IconColor = System.Drawing.Color.White;
             this.btnXoa.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoa.IconSize = 25;
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(825, 439);
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.Location = new System.Drawing.Point(830, 460);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(102, 37);
             this.btnXoa.TabIndex = 5;
             this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
@@ -392,14 +389,13 @@ namespace BTL.Forms.Main.Views
             this.btnXoaTrang.IconColor = System.Drawing.Color.White;
             this.btnXoaTrang.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnXoaTrang.IconSize = 25;
-            this.btnXoaTrang.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaTrang.Location = new System.Drawing.Point(942, 439);
+            this.btnXoaTrang.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoaTrang.Location = new System.Drawing.Point(947, 460);
             this.btnXoaTrang.Name = "btnXoaTrang";
             this.btnXoaTrang.Size = new System.Drawing.Size(102, 37);
             this.btnXoaTrang.TabIndex = 18;
             this.btnXoaTrang.Text = "Xóa trắng";
-            this.btnXoaTrang.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnXoaTrang.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnXoaTrang.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnXoaTrang.UseVisualStyleBackColor = false;
             this.btnXoaTrang.Click += new System.EventHandler(this.btnXoaTrang_Click);
             // 
@@ -416,14 +412,13 @@ namespace BTL.Forms.Main.Views
             this.btnTaiLai.IconColor = System.Drawing.Color.White;
             this.btnTaiLai.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTaiLai.IconSize = 25;
-            this.btnTaiLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTaiLai.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTaiLai.Location = new System.Drawing.Point(430, 2);
             this.btnTaiLai.Name = "btnTaiLai";
             this.btnTaiLai.Size = new System.Drawing.Size(102, 30);
             this.btnTaiLai.TabIndex = 19;
             this.btnTaiLai.Text = "Tải lại";
-            this.btnTaiLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTaiLai.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnTaiLai.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnTaiLai.UseVisualStyleBackColor = false;
             this.btnTaiLai.Click += new System.EventHandler(this.btnTaiLai_Click);
             // 

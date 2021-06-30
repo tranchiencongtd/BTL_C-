@@ -32,7 +32,7 @@ namespace BTL.Forms.User
             labelGioiTinh.Text = (bool)user.MaNvNavigation.GioiTinh ? "Nam":"Nữ";
             labelSDT.Text = user.MaNvNavigation.Sdt;
 
-            // Image ..\ALL_IN_BTL\BTL\BTL\images\
+            // Image ..\ALL_IN_BTL\BTL\BTL
             string paths = Application.StartupPath.Substring(0, (Application.StartupPath.Length)-26); // - 26 = path toi images
             anhAvatar.Image = Image.FromFile($"{paths}{user.MaNvNavigation.Anh}");
         }
